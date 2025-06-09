@@ -4,7 +4,7 @@ PLATE.AI is a full-stack web application demonstrating a complete, end-to-end pi
 
 This project is not only functional but also serves as a showcase of modern AI and web development practices—from dataset creation and model training to API design and interactive UI.
 
-![Screenshot]('./assets/Captura de pantalla 2025-06-09 181711.png')
+![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181711.png)
 
 ## ✨ Key Features
 🔍 High-Accuracy Detection
