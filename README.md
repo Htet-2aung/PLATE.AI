@@ -5,7 +5,7 @@ PLATE.AI is a full-stack web application demonstrating a complete, end-to-end pi
 This project is not only functional but also serves as a showcase of modern AI and web development practices—from dataset creation and model training to API design and interactive UI.
 
 ![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181711.png)
-
+![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181720.png?raw=true)
 ## ✨ Key Features
 🔍 High-Accuracy Detection
 Utilizes a custom-trained YOLOv11n model achieving mAP@0.5 = 0.993 on a dataset of 3,300+ Vietnamese license plates.
