@@ -3,6 +3,7 @@
 PLATE.AI is a full-stack web application demonstrating a complete, end-to-end pipeline for high-accuracy Vietnamese license plate detection and recognition. The system integrates a custom-trained YOLOv11n model, a real-time FastAPI backend, and a responsive React-based frontend.
 
 This project is not only functional but also serves as a showcase of modern AI and web development practices—from dataset creation and model training to API design and interactive UI.
+![Alt Text]()
 
 ## ✨ Key Features
 🔍 High-Accuracy Detection
