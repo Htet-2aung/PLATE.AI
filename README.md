@@ -1,29 +1,29 @@
-🚗 PLATE.AI: Advanced License Plate Recognition System
+## 🚗 PLATE.AI: Advanced License Plate Recognition System
 
 PLATE.AI is a full-stack web application demonstrating a complete, end-to-end pipeline for high-accuracy Vietnamese license plate detection and recognition. The system integrates a custom-trained YOLOv11n model, a real-time FastAPI backend, and a responsive React-based frontend.
 
 This project is not only functional but also serves as a showcase of modern AI and web development practices—from dataset creation and model training to API design and interactive UI.
 
-✨ Key Features
+## ✨ Key Features
 🔍 High-Accuracy Detection
 Utilizes a custom-trained YOLOv11n model achieving mAP@0.5 = 0.993 on a dataset of 3,300+ Vietnamese license plates.
 
-📷 Multi-Modal Input Support
+## 📷 Multi-Modal Input Support
 Analyze plates from images, video files, or live webcam feeds.
 
-🔡 Advanced OCR Engine
+## 🔡 Advanced OCR Engine
 Character recognition powered by FastPlateOCR (ONNX-based) for fast, precise text extraction.
 
-📊 Real-Time Analytics Dashboard
+## 📊 Real-Time Analytics Dashboard
 Live stats, a dynamic donut chart, and historical data tracking plate recognition accuracy and image processing counts.
 
-💻 Modern & Responsive UI
+## 💻 Modern & Responsive UI
 Built with React + Tailwind CSS, animations via Framer Motion, and Lottie hero section. Supports light/dark mode.
 
-🛂 Multi-Plate Detection
+## 🛂 Multi-Plate Detection
 The system can detect and process multiple license plates per image or frame.
 
-🛠️ Technology Stack
+## 🛠️ Technology Stack
 🖥️ Frontend
 Framework: React
 
@@ -42,7 +42,7 @@ AI/ML: PyTorch, OpenCV, Ultralytics YOLO
 
 OCR Engine: FastPlateOCR (ONNX-based)
 
-🧠 AI Model Architecture & Training
+## 🧠 AI Model Architecture & Training
 Model Architecture: YOLOv11n (nano)
 
 181 layers
@@ -74,7 +74,7 @@ mAP50: 0.993
 
 mAP50-95: 0.917
 
-🚀 Getting Started
+## 🚀 Getting Started
 📦 Prerequisites
 Python 3.8+
 
@@ -115,7 +115,7 @@ npm install
 npm start
 The frontend will be available at: http://localhost:3000
 
-⚙️ How It Works
+## ⚙️ How It Works
 User Interaction:
 Choose input type (photo, video, webcam) from the UI.
 
@@ -134,6 +134,6 @@ Backend returns a JSON with recognized text, confidence, bounding boxes, and cro
 Display:
 The frontend visualizes detection results and updates the dashboard in real-time.
 
-📄 License
+## 📄 License
 This project is licensed under the MIT License.
 
