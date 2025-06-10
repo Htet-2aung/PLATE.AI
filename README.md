@@ -6,8 +6,7 @@
 
 This project is designed not only as a functional tool but also as a comprehensive showcase of modern AI and web development practices, from data preparation and model training to deployment and user interface design.
 
-![Demo Gif](https://i.imgur.com/rL41aM7.png) 
-*(Note: It is highly recommended to replace this placeholder image with a GIF of your actual running application)*
+![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181711.png?raw=true) 
 
 ## ✨ Key Features
 
