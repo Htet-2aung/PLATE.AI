@@ -7,7 +7,7 @@
 This project is designed not only as a functional tool but also as a comprehensive showcase of modern AI and web development practices, from data preparation and model training to deployment and user interface design.
 
 ![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181711.png?raw=true) 
-
+![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181720.png?raw=true)
 ## ✨ Key Features
 
 - **High-Accuracy AI Model**: At its core, the application utilizes a custom-trained **YOLOv11n model**. This model was trained for 150 epochs on a specialized dataset of over 3,300 Vietnamese license plate images, achieving a high mean average precision (mAP@0.5) of **0.993**.
