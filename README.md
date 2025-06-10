@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+## Overview
+PLATE.AI is a full-stack web application demonstrating a complete, end-to-end pipeline for high-accuracy Vietnamese license plate detection and recognition. The system features a custom-trained YOLOv11n model, a real-time processing backend, and a modern, interactive frontend built with React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is designed not only as a functional tool but also as a comprehensive showcase of modern AI and web development practices, from data preparation and model training to deployment and user interface design.
 
-## Available Scripts
 
-In the project directory, you can run:
+## ✨ Key Features
+High-Accuracy AI Model: At its core, the application utilizes a custom-trained YOLOv11n model. This model was trained for 150 epochs on a specialized dataset of over 3,300 Vietnamese license plate images, achieving a high mean average precision (mAP@0.5) of 0.993.
 
-### `npm start`
+# Multi-Modal Input: Users can analyze license plates from static images, video files, or directly from a live webcam feed, demonstrating the model's versatility in different scenarios.
+# Advanced OCR Engine: The system employs a specialized ONNX-based OCR engine via the FastPlateOCR library, ensuring rapid and precise character extraction from the detected plates.
+# Real-Time Analytics Dashboard: The application features a dynamic dashboard that visualizes the model's cumulative performance. This includes an interactive donut chart showing the success rate and live-updating statistics on total images processed and accuracy.
+# Modern & Responsive UI: A fully responsive interface built with React and styled with Tailwind CSS, featuring smooth animations (Framer Motion), a Lottie-based hero section, and a persistent light/dark mode toggle.
+# Multi-Plate Detection: The backend is architected to identify, process, and return data for all license plates found within a single image or video frame.
+## 🛠️ Technology Stack
+The project is built on a modern, robust stack, cleanly separating the frontend and backend concerns.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Frontend
+Framework: React
+Styling: Tailwind CSS
+Animations: Framer Motion & Lottie
+Charting: Chart.js with react-chartjs-2
+API Communication: Axios
+# Backend
+Framework: FastAPI (Python)
+AI/ML Libraries: PyTorch, Ultralytics (YOLO), OpenCV
+OCR Engine: fast_plate_ocr (ONNX-based)
+## 🧠 AI Model Architecture & Training
+The performance of PLATE.AI is driven by a carefully trained computer vision model.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Architecture: The model is based on the YOLOv11n (nano) architecture, chosen for its excellent balance of speed and accuracy. It features 181 layers and 2,590,230 parameters.
+Training Environment: The model was trained in a Google Colab environment using a Tesla T4 GPU for acceleration.
+Dataset: A custom dataset named License_Plates_VietNam.v3i.yolov11 was used, containing 3,391 training images and 1,044 validation images.
+Training Process:
+The model was trained for 150 epochs.
+An AdamW optimizer was automatically selected.
+A batch size of 16 and an image size of 640x640 were used.
+Performance: After 150 epochs, the model achieved the following metrics on the validation set:
+mAP50-95: 0.917
+mAP50: 0.993
+This high level of precision demonstrates a highly reliable model for detecting both long and short Vietnamese license plates under various conditions.
 
-### `npm test`
+## 🚀 Getting Started
+To run this project locally, you will need to set up both the backend and frontend services.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Prerequisites
+Python 3.8+ and pip
+Node.js and npm
+Backend Setup
+Navigate to the backend directory:
 
-### `npm run build`
+'''
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd backend
+Create and activate a virtual environment:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+'''
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
 
-### `npm run eject`
+# For Windows
+python -m venv venv
+venv\Scripts\activate
+Install the required Python packages:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+pip install -r requirements.txt
+Start the FastAPI server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Bash
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+uvicorn main:app --reload
+The backend API will now be running on http://localhost:8000.
 
-## Learn More
+Frontend Setup
+Navigate to the frontend directory in a new terminal:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Bash
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+cd frontend
+Install the required Node modules:
 
-### Code Splitting
+Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm install
+Start the React development server:
 
-### Analyzing the Bundle Size
+Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm start
+The frontend application will open automatically in your browser at http://localhost:3000.
 
-### Making a Progressive Web App
+⚙️ How It Works
+The application follows a standard client-server architecture:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+User Interaction: The user selects an input mode (photo, video, or camera) on the React frontend.
+API Request: The selected media is sent to the FastAPI backend. For streams, frames are sent sequentially.
+Plate Detection: The YOLOv11 model processes the incoming frame to find bounding boxes for all potential license plates.
+OCR Processing: Each detected bounding box is cropped and sent to the FastPlateOCR engine, which recognizes the characters.
+JSON Response: The backend aggregates the results and sends a JSON payload containing the recognized text, confidence score, bounding box coordinates, and a Base64-encoded image of the crop for each detection.
+Display Results: The React frontend receives the JSON data, updates the analytics dashboard, and renders the results visually by drawing boxes over the preview and displaying the cropped plate images.
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
