@@ -1,141 +1,70 @@
-## 🚗 PLATE.AI: Advanced License Plate Recognition System
+# Getting Started with Create React App
 
-PLATE.AI is a full-stack web application demonstrating a complete, end-to-end pipeline for high-accuracy Vietnamese license plate detection and recognition. The system integrates a custom-trained YOLOv11n model, a real-time FastAPI backend, and a responsive React-based frontend.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project is not only functional but also serves as a showcase of modern AI and web development practices—from dataset creation and model training to API design and interactive UI.
+## Available Scripts
 
-![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181711.png)
-![image](https://github.com/Htet-2aung/PLATE.AI/blob/main/assets/Captura%20de%20pantalla%202025-06-09%20181720.png?raw=true)
-## ✨ Key Features
-🔍 High-Accuracy Detection
-Utilizes a custom-trained YOLOv11n model achieving mAP@0.5 = 0.993 on a dataset of 3,300+ Vietnamese license plates.
+In the project directory, you can run:
 
-## 📷 Multi-Modal Input Support
-Analyze plates from images, video files, or live webcam feeds.
+### `npm start`
 
-## 🔡 Advanced OCR Engine
-Character recognition powered by FastPlateOCR (ONNX-based) for fast, precise text extraction.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 📊 Real-Time Analytics Dashboard
-Live stats, a dynamic donut chart, and historical data tracking plate recognition accuracy and image processing counts.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 💻 Modern & Responsive UI
-Built with React + Tailwind CSS, animations via Framer Motion, and Lottie hero section. Supports light/dark mode.
+### `npm test`
 
-## 🛂 Multi-Plate Detection
-The system can detect and process multiple license plates per image or frame.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 🛠️ Technology Stack
-🖥️ Frontend
-Framework: React
+### `npm run build`
 
-Styling: Tailwind CSS
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Animations: Framer Motion, Lottie
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Charting: Chart.js (via react-chartjs-2)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-API Communication: Axios
+### `npm run eject`
 
-⚙️ Backend
-Framework: FastAPI (Python)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-AI/ML: PyTorch, OpenCV, Ultralytics YOLO
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-OCR Engine: FastPlateOCR (ONNX-based)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## 🧠 AI Model Architecture & Training
-Model Architecture: YOLOv11n (nano)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-181 layers
+## Learn More
 
-2,590,230 parameters
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Training Environment:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Google Colab with Tesla T4 GPU
+### Code Splitting
 
-Epochs: 150
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Optimizer: AdamW
+### Analyzing the Bundle Size
 
-Image size: 640x640
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Batch size: 16
+### Making a Progressive Web App
 
-Dataset:
-License_Plates_VietNam.v3i.yolov11
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-3,391 training images
+### Advanced Configuration
 
-1,044 validation images
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Results:
+### Deployment
 
-mAP50: 0.993
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-mAP50-95: 0.917
+### `npm run build` fails to minify
 
-## 🚀 Getting Started
-📦 Prerequisites
-Python 3.8+
-
-Node.js & npm
-
-🧩 Backend Setup
-bash
-Copy
-Edit
-cd backend
-
-# Create and activate a virtual environment
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run FastAPI server
-uvicorn main:app --reload
-The backend will be available at: http://localhost:8000
-
-💻 Frontend Setup
-bash
-Copy
-Edit
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start React development server
-npm start
-The frontend will be available at: http://localhost:3000
-
-## ⚙️ How It Works
-User Interaction:
-Choose input type (photo, video, webcam) from the UI.
-
-Media Upload:
-Media is sent to the FastAPI backend. Frames are streamed if using live input.
-
-Detection:
-YOLOv11n model locates all plates in each frame/image.
-
-Recognition:
-Each plate is cropped and processed by the OCR engine.
-
-Response:
-Backend returns a JSON with recognized text, confidence, bounding boxes, and cropped plate images (Base64).
-
-Display:
-The frontend visualizes detection results and updates the dashboard in real-time.
-
-## 📄 License
-This project is licensed under the MIT License.
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
