@@ -16,14 +16,15 @@ import {
   BarChart2,
 } from "lucide-react";
 import animationData from './scanningAnimation.json';
-import ThemeToggle from './ThemeToggle' // <-- Import the new component
+import ThemeToggle from './ThemeToggle'; // <-- Import the new component
 import sampleImage1 from './sampleImage1.png'; // Make sure you have this file
 import sampleImage2 from './sampleImage2.png';
 import sampleImage3 from './sampleImage3.png';
 import sampleImage4 from './sampleImage4.png';
 import AnalyticsChart from './AnalyticsChart'; // <-- Import the new chart component
 
-
+// Use an environment variable for the API URL for deployment flexibility
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 function App() {
   const [mode, setMode] = useState("photo");
@@ -35,7 +36,7 @@ function App() {
   const [analytics, setAnalytics] = useState(null);
   const [mediaStream, setMediaStream] = useState(null);
 
- const videoRef = useRef(null);
+  const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const imageRef = useRef(null);
   const loopId = useRef(null);
@@ -54,7 +55,7 @@ function App() {
   // ... (No changes needed in the logic section)
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("http://localhost:8000/analytics")
+      axios.get(`${API_URL}/analytics`) // <-- FIXED
         .then(res => setAnalytics(res.data))
         .catch(err => console.error("Failed to fetch analytics:", err));
     }, 2000);
@@ -210,7 +211,7 @@ function App() {
         const formData = new FormData();
         formData.append('file', blob, 'frame.jpg');
         try {
-            const res = await axios.post("http://localhost:8000/detect-plate", formData);
+            const res = await axios.post(`${API_URL}/detect-plate`, formData); // <-- FIXED
             drawDetections(res.data.detections, videoElement, canvasElement);
         } catch (error) {
             console.error("Frame processing error:", error);
@@ -226,7 +227,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await axios.post("http://localhost:8000/detect-plate", formData);
+      const res = await axios.post(`${API_URL}/detect-plate`, formData); // <-- FIXED
       const detections = res.data.detections || [];
       setResults(detections);
       const wasSuccessful = detections.some(det => det.plate !== "Unreadable");
