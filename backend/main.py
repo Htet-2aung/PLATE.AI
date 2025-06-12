@@ -15,14 +15,18 @@ app = FastAPI()
 lock = threading.Lock()
 analytics = {"total_images": 0, "successful_plates": 0, "last_plate": "N/A"}
 
+origins = [
+    "http://localhost:3000",  # Your local React app
+    "https://plate-q9q2qmwt4-htet-aungs-projects-48c9fdcb.vercel.app"  # Your deployed Vercel app
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=origins,  # Use the new list here
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],    # Allow all methods (GET, POST, etc.)
+    allow_headers=["*"],    # Allow all headers
 )
-
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"--- Using device for YOLO: {device} ---")
 
