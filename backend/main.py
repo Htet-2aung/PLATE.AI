@@ -17,7 +17,7 @@ analytics = {"total_images": 0, "successful_plates": 0, "last_plate": "N/A"}
 
 origins = [
     "http://localhost:3000",  # Your local React app
-    "https://plate-q9q2qmwt4-htet-aungs-projects-48c9fdcb.vercel.app"
+    "https://plate-q9q2qmwt4-htet-aungs-projects-48c9fdcb.vercel.app",
     "https://plate-ai-theta.vercel.app"# Your deployed Vercel app
 ]
 
