@@ -26,7 +26,7 @@ app.add_middleware(
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"--- Using device for YOLO: {device} ---")
 
-YOLO_MODEL_PATH = os.path.abspath('backend/weights/best.pt')
+YOLO_MODEL_PATH = os.path.abspath('weights/best.pt')
 try:
     model_yolo = YOLO(YOLO_MODEL_PATH)
     model_yolo.to(device)
