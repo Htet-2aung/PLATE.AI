@@ -114,7 +114,3 @@ The application follows a standard client-server architecture:
 4.  **OCR Processing**: Each detected bounding box is cropped and sent to the FastPlateOCR engine, which recognizes the characters.
 5.  **JSON Response**: The backend aggregates the results and sends a JSON payload containing the recognized text, confidence score, bounding box coordinates, and a Base64-encoded image of the crop for each detection.
 6.  **Display Results**: The React frontend receives the JSON data, updates the analytics dashboard, and renders the results visually by drawing boxes over the preview and displaying the cropped plate images.
-
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
