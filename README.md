@@ -108,7 +108,7 @@ To run this project locally, you will need to set up both the backend and fronte
 
 The application follows a standard client-server architecture:
 
-1.  **User Interaction**: The user selects an input mode (photo, video, or camera) on the React frontend.
+1.  **User Interaction**: The user selects an input mode (photo, video, or camera)on the React frontend.
 2.  **API Request**: The selected media is sent to the FastAPI backend. For streams, frames are sent sequentially.
 3.  **Plate Detection**: The YOLOv11 model processes the incoming frame to find bounding boxes for all potential license plates.
 4.  **OCR Processing**: Each detected bounding box is cropped and sent to the FastPlateOCR engine, which recognizes the characters.
